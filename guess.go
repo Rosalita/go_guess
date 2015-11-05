@@ -18,8 +18,19 @@ func main(){
     fmt.Printf("Hello %s\n", name)
     fmt.Println("I'm thinking of a number between 1 and 100 ")
     fmt.Println("What is the number I am thinking of?")
-    fmt.Scanln(&guess)
-    guesses ++
-    fmt.Printf("Your guess was %d\n", guess)
-    fmt.Printf("The random number was %d\n", randnum)
+
+    for {
+      fmt.Scanln(&guess)
+      guesses ++
+      if guess < randnum {
+          fmt.Println("Your guess was too low, try again.")
+      } else if guess > randnum{
+          fmt.Println("Your guess was too high, try again.")
+      } else {
+          fmt.Printf("Congratulations %s! you guessed the number was %d\n", name,randnum)
+          break
+      }
+    }
+    fmt.Printf("It took you %d guesses to do this\n",guesses)
+
 }
