@@ -1,9 +1,10 @@
 package main
 
 import (
+  "time"
   "fmt"
   "math/rand"
-  "time"
+
   )
 
 func main(){
